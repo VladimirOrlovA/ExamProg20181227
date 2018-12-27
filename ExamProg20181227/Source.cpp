@@ -6,14 +6,30 @@
 
 HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
-// ExamProg20181227
+// ExamProg20181227 var2
 
 void Task1()
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask1\n\n");
-	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+	int i, x;
+	float b, n;
+
+	printf("Введите число => ");
+	scanf_s("%f", &n);
+
+	for(i=6; n>=1; i--)
+	{
+		float b = (float) n / pow(2,i);
+		x = b;
+		n = n - x * pow(2, i);
+		
+		if (x !=0)	printf(" Кол-во купюр достоинством %.f = %d \n", (pow(2,i)), x);
+	
+	} 
+
 }
 
 
@@ -21,8 +37,30 @@ void Task2()
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask2\n\n");
-	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+	int i=0, sum=0;
+
+	while (sum <= 50)
+	{
+		
+		i++;
+				
+		if (i % 2 != 0)
+		{
+			sum = sum + i;
+			
+			if (sum >= 50) break;
+			
+			printf("%d \n", i);
+						
+		}
+
+	} 
+
+	printf("\n Сумма положительных нечетных чисел = %d", sum-i);
+	
+
 }
 
 
@@ -30,8 +68,24 @@ void Task3()
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask3\n\n");
-	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+	int n, i, sum=0;
+
+	for (i = 1; i <= 10; i++)
+	{
+		n = 600 + rand() % 800;
+
+		printf("%d товар стоит : %d \n", i, n);
+
+		if (n > 1000)
+		{
+			sum = sum + n;
+		}
+		
+	}
+		printf("Сумма товаров стоимостью >1000тг = %d", sum);
+	
 }
 
 
@@ -39,8 +93,10 @@ void Task4()
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask4\n\n");
-	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+
+
 }
 
 
