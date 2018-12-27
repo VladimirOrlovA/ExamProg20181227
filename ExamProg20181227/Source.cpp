@@ -95,7 +95,13 @@ void Task4()
 	printf("\n--------------------------------------------------------------------------\n\nTask4\n\n");
 	SetConsoleTextAttribute(hConsole, 7);
 
+	int n, np, j, jp;
 
+	for (j = 1; j <= 5; j++)
+	{
+		np = 3 + rand() % 13;
+
+	}
 
 }
 
@@ -104,8 +110,26 @@ void Task5()
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask5\n\n");
-	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+	int ch, klass, sklass, total = 0, sum = 0;
+
+	for (klass = 1; klass <= 11; klass++)
+	{
+		printf("%d классов 5 \n", klass);
+
+		for (sklass = 1; sklass <= 5; sklass++)
+		{
+			ch = 15 + rand() % 7;
+			sum = sum + ch;
+			printf("%d первый класс - кол-во учеников = %d \n", sklass, sum);
+		}
+		printf("Во всех %d классах учеников = %d \n", klass, sum);
+
+		if (klass % 2 != 0) total = total + sum;
+	}
+
+	printf("Кол-во учеников 1, 3, 5, 7, 9, 11 классах школы = %d", total);
 }
 
 
@@ -113,8 +137,23 @@ void Task6()
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask6\n\n");
-	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+	int i, p, sum85=0, sum90=0;
+
+	for (i = 1; i <= 10; i++)
+	{
+		p = 1980 + rand() % 20;
+
+		printf("%d человек г.р. : %d \n", i, p);
+		
+		if (p <= 1985) sum85 = sum85+1;
+		if (p >= 1985) sum90 = sum90+1;
+
+	}
+
+	printf("\nКол-во людей до 1985г.р.	: %d \n", sum85);
+	printf("Кол-во людей после 1990г.р.	: %d \n", sum90);
 }
 
 
@@ -122,8 +161,29 @@ void Task7()
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask7\n\n");
-	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+	int team, play, res=0, sum=0, resp=0, p=0, n=0;
+
+	for (team = 1; team <= 5; team++)
+	{
+
+		for (play = 1; play <= 10; play++)
+		{
+			res = 0 + rand() % 2;
+
+			if (res != 0) p = p + 1;
+			if (res == 0) n = n + 1;
+						
+		}
+		printf("\nКоманда %d \n", team);
+		printf("- кол-во выигрышей		: %d \n", p);
+		printf("- кол-во проигрышей		: %d \n", n);
+
+		if (p > n) resp = resp + 1;
+	}
+
+	printf("Кол-во команд с большим колличеством выигрышей %d", resp);
 }
 
 
