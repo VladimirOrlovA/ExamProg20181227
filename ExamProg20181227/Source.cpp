@@ -247,7 +247,7 @@ int main()
 
 
 	if (flag == 1)
-		system("pause");
+		system("pause"); 
 
 
 }
