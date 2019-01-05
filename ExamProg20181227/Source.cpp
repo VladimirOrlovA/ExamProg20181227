@@ -89,20 +89,27 @@ void Task3()
 }
 
 
-void Task4()
+void Task4() // делал дома 05.01.2019
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask4\n\n");
 	SetConsoleTextAttribute(hConsole, 7);
 
-	int n, np, j, jp;
+	int i, np, mp, sum = 0;
 
-	for (j = 1; j <= 5; j++)
+	for (i = 1; i <= 5; i++)
 	{
-		np = 3 + rand() % 13;
+		np = 10 + rand() % 6;
+		mp = 10 + rand() % 40;
+
+		printf("%3 %d газета - кол-во страниц %d \n", i, np);
+		printf("%3 %d журнал - кол-во страниц %d \n\n", i, mp);
+
+		if (mp > np) sum = sum + mp;
 
 	}
 
+	printf("\n Суммарное кол-во страниц журналов, превышающих газеты по объему страниц = %d \n\n", sum);
 }
 
 
@@ -112,24 +119,26 @@ void Task5()
 	printf("\n--------------------------------------------------------------------------\n\nTask5\n\n");
 	SetConsoleTextAttribute(hConsole, 7);
 
-	int ch, klass, sklass, total = 0, sum = 0;
+	int ch, klass, sklass, total = 0, sum;
 
 	for (klass = 1; klass <= 11; klass++)
 	{
-		printf("%d классов 5 \n", klass);
+		printf("\n\n%d классов 5 \n\n", klass);
+
+		sum = 0;
 
 		for (sklass = 1; sklass <= 5; sklass++)
 		{
 			ch = 15 + rand() % 7;
 			sum = sum + ch;
-			printf("%d первый класс - кол-во учеников = %d \n", sklass, sum);
+			printf("%d первый класс - кол-во учеников = %d \n", sklass, ch);
 		}
-		printf("Во всех %d классах учеников = %d \n", klass, sum);
+		printf("\nВо всех %d классах учеников = %d \n", klass, sum);
 
 		if (klass % 2 != 0) total = total + sum;
 	}
 
-	printf("Кол-во учеников 1, 3, 5, 7, 9, 11 классах школы = %d", total);
+	printf("\n\n\nКол-во учеников 1, 3, 5, 7, 9, 11 классах школы = %d", total);
 }
 
 
@@ -147,8 +156,8 @@ void Task6()
 
 		printf("%d человек г.р. : %d \n", i, p);
 		
-		if (p <= 1985) sum85 = sum85+1;
-		if (p >= 1985) sum90 = sum90+1;
+		if (p < 1985) sum85 = sum85+1;
+		if (p >= 1990) sum90 = sum90+1;
 
 	}
 
@@ -187,22 +196,93 @@ void Task7()
 }
 
 
-void Task8()
+void Task8() // делал дома 05.01.2019
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask8\n\n");
-	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+	int st=0, ex1, ex2;
+
+	for (int i = 1; i <= 15; i++)
+	{
+		ex1 = 2 + rand() % 4; 
+		ex2 = 2 + rand() % 4;
+
+		printf("%3 %3.d - студент - оценка за 1 экзамен = %d,  оценка за 2 экзамен = %d \n", i, ex1, ex2);
+
+		if (ex1 == 2 || ex2 == 2) st = st + 1;
+	}
+
+	printf("\n\n Кол-во студентов в группе получивших на экзамене \"2\" = %d", st);
 }
 
 
-void Task9()
+void Task9() // делал дома 05.01.2019
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask9\n\n");
-	printf("\nВ разработке.... \n\n");
 	SetConsoleTextAttribute(hConsole, 7);
+
+	int p, w, average = 0, average100 = 0, i = 0, i1 = 0;
+
+	for (p = 1; p <= 10; p++)
+	{
+		w = 80 + rand() % 40;
+
+		if (w <= 100)
+		{
+			i++;
+			average = average + w;
+		}
+
+		if (w > 100)
+		{
+			i1++;
+			average100 = average100 + w;
+		}
+
+		printf("%3.d - человек = %3.d кг \n", p, w);
+	}
+
+	printf("\n\n Средняя масса людей весом до\t\t 100кг = %.2f", (float) average / i);
+	printf("\n\n Средняя масса людей весом свыше\t 100кг = %.2f", (float)average100 / i1);
+
 }
+
+
+void Task10() // делал дома 05.01.2019
+{
+	SetConsoleTextAttribute(hConsole, 10);
+	printf("\n--------------------------------------------------------------------------\n\nTask10\n\n");
+	SetConsoleTextAttribute(hConsole, 7);
+
+
+
+}
+
+
+void Task11() // делал дома 05.01.2019
+{
+	SetConsoleTextAttribute(hConsole, 10);
+	printf("\n--------------------------------------------------------------------------\n\nTask11\n\n");
+	SetConsoleTextAttribute(hConsole, 7);
+
+
+
+}
+
+
+void Task12() // делал дома 05.01.2019
+{
+	SetConsoleTextAttribute(hConsole, 10);
+	printf("\n--------------------------------------------------------------------------\n\nTask12\n\n");
+	SetConsoleTextAttribute(hConsole, 7);
+
+
+
+}
+
 
 
 int main()
@@ -216,7 +296,7 @@ int main()
 
 	do
 	{
-		printf("Enter number of Task (1) to (9) => ");
+		printf("Enter number of Task (1) to (12) => ");
 		scanf_s("%d", &number);
 
 		switch (number)
@@ -230,6 +310,9 @@ int main()
 		case 7: {Task7(); } break;
 		case 8: {Task8(); } break;
 		case 9: {Task9(); } break;
+		case 10: {Task10(); } break;
+		case 11: {Task11(); } break;
+		case 12: {Task12(); } break;
 
 		default: printf("\nEntered number of Task does not exist...\n\n");
 
