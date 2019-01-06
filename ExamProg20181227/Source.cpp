@@ -305,13 +305,41 @@ void Task11() // делал дома 06.01.2019
 }
 
 
-void Task12() // делал дома 05.01.2019
+void Task12() // делал дома 06.01.2019
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask12\n\n");
 	SetConsoleTextAttribute(hConsole, 7);
 
+	int n, m, thing, box;
 
+	printf("Введите кол-во предметов => ");
+	scanf_s("%d", &thing);
+
+	printf("Введите кол-во ящиков => ");
+	scanf_s("%d", &box);
+	printf("\n\n");
+	
+
+	for(int i=1; i<=thing; i++)
+	{
+		n = 20 + rand() % 50;
+		
+		for(int i1=1; i1<=box; i1++)
+		{
+			m = 20 + rand() % 50;
+
+			if (n <= m)
+			{
+				printf("(%2.d) предмет объемом %4.d размещен в ящик объемом %4.d \n", i, n, m);
+				printf("\t(подбор нужного ящика на %d варианте)\n\n", i1);
+				box = box - 1;
+				break;
+			}
+			// printf("\n\n Осталось ящиков - %d \n", box);
+		} 
+		
+	} 
 
 }
 
