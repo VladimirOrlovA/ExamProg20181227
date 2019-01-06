@@ -251,24 +251,56 @@ void Task9() // делал дома 05.01.2019
 }
 
 
-void Task10() // делал дома 05.01.2019
+void Task10() // делал дома 06.01.2019
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask10\n\n");
 	SetConsoleTextAttribute(hConsole, 7);
 
+	float t, bt = 0;
 
+	for (int i = 1; i <= 10; i++)
+	{
+		t = float(40 + rand() % 20) / (5 + rand() % 10);
+		
+		printf("%3 Финишировал спортсмен под номером %d время = %4.2f сек \n", i, t);
+		
+		if (t <= bt || bt==0) bt = t;
+
+		printf("%3 Лучшее время = %4.2f \n\n\n", bt);
+
+	}
 
 }
 
 
-void Task11() // делал дома 05.01.2019
+void Task11() // делал дома 06.01.2019
 {
 	SetConsoleTextAttribute(hConsole, 10);
 	printf("\n--------------------------------------------------------------------------\n\nTask11\n\n");
 	SetConsoleTextAttribute(hConsole, 7);
 
+	float bal, minb=0, maxb=0, sum=0;
+	int i;
 
+	for (i = 1; i <= 6; i++)
+	{
+		bal = float(40 + rand() % 20) / (5 + rand() % 10);
+		sum = sum + bal;
+
+		if (bal <= minb || minb == 0) minb = bal;
+		if (bal >= maxb || maxb == 0) maxb = bal;
+
+		printf("%d - оценка - %2.1f \n", i, bal);
+		
+	}
+		
+	printf("\n%3 мин   оценка - %2.1f \n", minb);
+	printf("%3 макс  оценка - %2.1f \n", maxb);
+
+	sum = (sum - minb - maxb) / (i-3);
+
+	printf("\n%3 средн оценка - %2.1f \n", sum);
 
 }
 
